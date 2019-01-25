@@ -14,7 +14,7 @@ class NewThread implements Runnable{
     
     public void run(){
         try{
-            for(int i=5 ; i>0 ;i--){
+            for(int i=10 ; i>0 ;i--){
                 System.out.println( name +":" + i);
                 Thread.sleep(1000); 
             }
@@ -28,12 +28,15 @@ class NewThread implements Runnable{
 
 public class BasicThread {
     public static void main(String[] args) {
-        new NewThread("one");
-        new NewThread("Two");
-        new NewThread("Three");
+        NewThread nt1= new NewThread("one");
+        NewThread nt2= new NewThread("Two");
+        NewThread nt3=  new NewThread("Three");
         
         try{
-            Thread.sleep(1000);//wait for other Thread
+           nt1.t.join();
+           nt2.t.join();
+           nt3.t.join();
+            //Thread.sleep(1000);//wait for other Thread
         }catch(Exception e)
         {
             System.err.println(e);
