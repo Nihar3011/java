@@ -4,7 +4,7 @@ import java.util.*;
 
 class MyComp implements Comparator<Employee>{
     public int compare(Employee a,Employee b){ 
-            return a.salary-b.salary;
+            return a.getSalary()-b.getSalary();
     }
 }
 public class TreeSetMap {
@@ -36,6 +36,9 @@ public class TreeSetMap {
                      
                       System.out.println(me.getValue());
                   }
+                  
+                  Set<Integer> keys=tm.keySet();
+                  System.out.println(keys);
     }
     
 }
